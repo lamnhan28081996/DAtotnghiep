@@ -1,0 +1,57 @@
+<div class="app-content-body ">
+  <div class="hbox hbox-auto-xs hbox-auto-sm">
+    <!-- main -->
+    <div class="col">
+      <!-- main header -->
+      <div class="bg-light lter b-b wrapper-md">
+        <div class="row">
+          <div class="col-sm-12 col-xs-12">
+            <h1 class="m-n font-thin h3 text-black">Thêm thông báo</h1>
+          </div>
+        </div>
+      </div>
+          <div class="col-sm-12 col-xs-12 col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading font-bold">Thêm</div>
+              <div class="panel-body">
+                <form role="form" #formAdd1Notification="ngForm">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Tên thông báo</label>
+                      <input id="notification-name" type="text" [(ngModel)]="notification_name" name="notification_name" class="form-control" placeholder="Nhập tên thông báo">
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div class="form-group">
+                        <label>Ngày đăng</label>
+                        <input id="notification-date" type="text" class="form-control" placeholder="Nhập ngày đăng">
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                          <label>Chức vụ</label>
+                          <select id="notification-position" [(ngModel)]="notification_position" name="notification_position" class="form-control">
+                            <option value="undefined">Chọn chức vụ</option>
+                            <option *ngFor="let pos of list_postion" [ngValue]="pos['position_id']">{{pos['position_name']}}</option>
+                          </select>
+                        </div>
+                      </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label>Nội dung thông báo</label>
+                      <input id="notification-content" type="text" [(ngModel)]="notification_content" name="notification_content" class="form-control"
+                        placeholder="Nhập nội dung thông báo">
+                    </div>
+                  </div>
+                
+                 </form>
+              </div>
+              <div class="panel-footer">
+                <button (click)="add1Notification()" class="btn btn-primary btn-block">Thêm thông báo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- / main -->
+  </div>
